@@ -1,4 +1,4 @@
-from math import degrees, sqrt, atan
+from math import degrees, hypot, sqrt, atan
 
 a = input("Enter the rise of the slide's ladder: ")
 b = input("Enter the run of the slide's ladder: ")
@@ -9,6 +9,7 @@ run = int(b)
 sidea = rise * rise
 sideb = run * run
 slide = int(sqrt(sidea + sideb))
+#slide = int(hypot(rise, run))
 angle = int(degrees(atan(rise/run)))
 
 slidesafe = False
@@ -21,6 +22,6 @@ else:
     slidesafe = True
 
 if slidesafe == True:
-    print("Safe! The angle is: " + str(angle) + " degrees and your slide length is " + str(slide))
+    print("Safe! The angle is: " + str(angle) + " degrees and your slide length is: " + str(slide))
 else:
-    print("Safe")
+    print("Unsafe! The angle is: " + str(angle) + " degrees and your slide length is: " + str(slide))
